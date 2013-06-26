@@ -1,0 +1,12 @@
+$(functions(){
+
+});
+
+function update_latest_photos(){
+    $.ajax({
+        type: 'get',
+        url: 'photos/show',
+        data: $("#last_update_time").val(),
+        success: function(data) {
+
+

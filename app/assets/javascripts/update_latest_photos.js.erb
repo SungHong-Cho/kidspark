@@ -1,0 +1,23 @@
+$(functions(){
+
+});
+
+function update_latest_photos(){
+    $.ajax({
+        type: 'get',
+        url: 'photos/show',
+        data: $("#last_update_time").val(),
+        success: function(data) {
+            $("#photo_area").append("<a href='" + data.url + "'>" +
+                                    "<div class='box'>" +
+                                    "<div class='photo_box'>"
+                                    "<img src='" + data.image_src + "'/>" +
+                                    "</div>" +
+                                    "<div class='meta_box'>" + data.time + "</div>" +
+                                    "</div>" +
+                                    "</a>");
+        }
+    });
+}
+
+
