@@ -1,0 +1,94 @@
+// Place all the styles related to the photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$photo_small_width:213px;
+$photo_small_height:320px;
+$meta_small_height:30px;
+$photo_big_width:640px;
+$photo_big_height:640px;
+$margin_px: 14px;
+
+*{
+  border:0;
+  padding:0;
+  margin:0 auto;
+  font-family: 새굴림, 굴림, 돋움, Serif;
+}
+
+body{
+  background: white;
+}
+
+.plat{
+  width:100%;
+  margin:0;
+}
+
+.wrapper{
+  @media (max-width:700px){
+    width:450px;
+  }
+  @media (min-width:701px) and (max-width:950px){
+    width:700px;
+  }
+  @media (min-width:951px) and (max-width:1200px){
+    width:950px;
+  }
+  @media (min-width:1201px) and (max-width:1450px){
+    width:1200px;
+  }
+  margin: 0 auto;
+  padding: 0px $margin_px/2 0px $margin_px/2;
+}
+
+.box{
+  border:5px #32AAFF;
+  margin: $margin_px $margin_px/2 0px $margin_px/2;
+  padding: 0;
+  display: inline-block;
+  width: $photo_small_width;
+  height: $photo_small_height + $meta_small_height;
+  overflow:auto;
+}
+
+.box:hover{
+  box-shadow: 0px 0px 50px #f58565;
+  cursor:pointer;
+}
+
+.box .photo_box{
+  border-bottom: 2px #32AAFF;
+  margin: 0 auto;
+  padding: 0;
+  width: $photo_small_width;
+  height: $photo_small_height;
+}
+
+.box .meta_box{
+  //background:#eff3bd;
+  border: 0px; 
+  margin: 0 auto;
+  padding: 0;
+  width: $photo_small_width;
+  height: $meta_small_height;
+}
+
+.detail_wrapper{
+  width:$photo_big_width;
+  margin:0 auto;
+  padding:0px;
+  border: 0px;
+}
+
+.detail_datetime_box{
+  width:$photo_big_width;
+  overflow:auto;  
+}
+
+.detail_photo_box{
+  width:$photo_big_width;
+}
+
+.detail_share_box{
+  text-align:right;
+}
