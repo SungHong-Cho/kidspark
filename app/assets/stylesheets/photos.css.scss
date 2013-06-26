@@ -3,20 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $photo_small_width:213px;
 $photo_small_height:320px;
-$meta_small_height:30px;
 $photo_big_width:640px;
 $photo_big_height:640px;
+$meta_small_height:20px;
 $margin_px: 14px;
-
+$main_background_color: white;
+$box_border_color:#bdbdbd;
+$box_shadow_color:#9f9f9f;
 *{
   border:0;
   padding:0;
   margin:0 auto;
-  font-family: 새굴림, 굴림, 돋움, Serif;
+  font-family: 나눔고딕, 새굴림, 굴림, 돋움, Serif;
 }
 
 body{
-  background: white;
+  background: $main_background_color;
+//  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAATElEQVQYV2M8e/ZsPQMB8OPHDwZGZIUgAQ4ODrA2ZDaID1aILojNAriJuBTDxFGsRjcJWTNehcgaMdyIywmkmYhsBchEEEAPJqKDBwCBWEDvk1QybQAAAABJRU5ErkJggg==) repeat;
+}
+
+a:link {
+  color:black;
+  text-decoration:none;
+}
+a:visited {
+  color:black;
+  text-decoration:none;
+}
+a:active {
+  color:black;
+  text-decoration:none;
+}
+a:hover {
+  color:black;
+  text-decoration:none;
 }
 
 .plat{
@@ -41,20 +61,64 @@ body{
   padding: 0px $margin_px/2 0px $margin_px/2;
 }
 
+#search_area{
+  margin-top:14px;
+  border: 1px solid $box_border_color;
+  border-radius:5px;
+  box-shadow: 0px 2px 5px $box_shadow_color;
+  background: white;
+  text-align:center;
+  max-width:800px;
+//  height:30px;
+}
+
+.search_box{
+  background:transparent;
+  border: 1px solid $box_border_color;
+  border-radius:5px;
+  margin: 10px 0;
+}
+
+.search_button{
+  background:#D6FFFF;
+  border: 1px solid $box_border_color;
+  border-radius:5px;
+  width:50px;
+  height:25px;
+  margin-left:10px;
+}
+
+.search_button:hover{
+  background:#A0D9E2;
+  cursor:pointer;
+}
+
+.search_button:active{
+  position:relative;
+  top:1px;
+}
+
+#photo_area{
+  width:100%;
+  
+}
+
 .box{
-  border:5px #32AAFF;
+  border:1px solid $box_border_color;
+  border-radius:5px;
   margin: $margin_px $margin_px/2 0px $margin_px/2;
   padding: 0;
   display: inline-block;
   width: $photo_small_width;
-  height: $photo_small_height + $meta_small_height;
+  height: $photo_small_height + $meta_small_height + 10;
   overflow:auto;
+  box-shadow:0px 2px 5px $box_shadow_color;
 }
 
-.box:hover{
-  box-shadow: 0px 0px 50px #f58565;
-  cursor:pointer;
-}
+//.box:hover{
+//  box-shadow: 0px 0px 50px #f58565;
+//  cursor:pointer;
+//}
 
 .box .photo_box{
   border-bottom: 2px #32AAFF;
@@ -65,12 +129,13 @@ body{
 }
 
 .box .meta_box{
-  //background:#eff3bd;
+  background:#f9f9f9;
   border: 0px; 
   margin: 0 auto;
-  padding: 0;
+  padding: 5px 0;
   width: $photo_small_width;
   height: $meta_small_height;
+  text-align:center;
 }
 
 .detail_wrapper{
