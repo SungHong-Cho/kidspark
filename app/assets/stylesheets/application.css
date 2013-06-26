@@ -9,12 +9,14 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery.ui.all
  *= require_tree .
  */
 #header{
-  background: black;
-  border: 0;
-  height:100px;
+  background: white;
+  border-bottom: 1px solid #c3c3c3;
+  box-shadow: 0px 0px 5px #b1b1b1;
+  height:45px;
   width:100%;
   top:0;
   left:0;
@@ -46,9 +48,10 @@
 }
 
 #footer{
-  background: black;
-  border: 0;
-  height: 150px;
+  background: white;
+  border-top: 1px solid #c3c3c3;
+  box-shadow: 0px -2px 5px #b1b1b1;
+  height: 45px;
   width: 100%;
   top:100%;
   left:0;
