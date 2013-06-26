@@ -4,9 +4,9 @@ class PhotosController < ApplicationController
     @default_from_datetime = -1.days.from_now
     @default_to_datetime = 0.days.from_now
     if(params[:show_type] == "find")
-(1..5).each do |index|
-puts params["find_from_datetime"]["post(#{index}i)"].to_i
-end
+      (1..5).each do |index|
+        puts params["find_from_datetime"]["post(#{index}i)"].to_i
+      end
       @from_datetime = DateTime.new(params["find_from_datetime"]["post(1i)"].to_i,
                                     params["find_from_datetime"]["post(2i)"].to_i,
                                     params["find_from_datetime"]["post(3i)"].to_i,
@@ -29,6 +29,14 @@ end
 
   def detail
     @photo = Photo.where(id: params[:id]).first
-    
+
+  end
+
+  def create
+    puts params
+    respond_to do |format|
+      format.html { redirect_to photos_show_path }
+      format.js
+    end
   end
 end

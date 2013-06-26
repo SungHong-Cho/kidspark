@@ -3,5 +3,5 @@ class Photo
   include Mongoid::Timestamps
 
   field :flickr_id, type: String
-  #embeded_many :sizes
+  embeded_many :sizes
 end
