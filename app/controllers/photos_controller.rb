@@ -1,4 +1,6 @@
 class PhotosController < ApplicationController
+  skip_before_filter :verify_authenticity_token, only: [:create]
+
   def show
     @photos = Photo.all
     @default_from_datetime = -1.days.from_now
@@ -33,10 +35,13 @@ class PhotosController < ApplicationController
   end
 
   def create
-    puts params
-    respond_to do |format|
-      format.html { redirect_to photos_show_path }
-      format.js
+    if http_basic_authenticate_with(name: "skyseed", password:"12345")
+      @photo = Photo.new(params)
+      @photo.save
+
+      respond_to do |format|
+        format.json {"state:success"}
+      end
     end
   end
 end
