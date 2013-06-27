@@ -12,25 +12,39 @@
  *= require jquery.ui.all
  *= require_tree .
  */
-#header{
-  background: white;
+
+$content_width:1024px;
+$header_background_color:#1a1a1a;
+$footer_background_color:#a8a8a8;
+
+body{
+  background:$footer_background_color;
+}
+
+#header_wrapper{
+  background:$header_background_color;
   border-bottom: 1px solid #c3c3c3;
   box-shadow: 0px 0px 5px #b1b1b1;
-  height:45px;
+  height:77px;
   width:100%;
-  top:0;
-  left:0;
+}
+
+#header{
+  height:77px;
+  width:$content_width;
 }
 
 #header .logo{
-  margin: 10 0 5 10;
+  margin: 10px 0px 10px 20px;
   vertical-align:middle;
   display:inline-block;
 }
 
 #header ul{
-  margin: 0;
+  margin: 38px 20px 0px 10px;
   padding: 0;
+  display:inline-block;
+  float:right;
 }
 
 #header ul li{
@@ -57,16 +71,61 @@
   background: image-url("photo_on.png") no-repeat center;
 }
 
+#about_tab{
+  background: image-url("about_off.png") no-repeat center;
+  width:65px;
+  height:27px;
+}
+
+#about_tab.active{
+  background: image-url("about_on.png") no-repeat center;
+}
+
+#scatch_tab{
+  background: image-url("scatch_off.png") no-repeat center;
+  width:80px;
+  height:27px;
+}
+
+#scatch_tab.active{
+  background: image-url("scatch_on.png") no-repeat center;
+}
+
+#tocome_tab{
+  background: image-url("tocome_off.png") no-repeat center;
+  width:64px;
+  height:27px;
+}
+
+#tocome_tab.active{
+  background: image-url("tocome_on.png") no-repeat center;
+}
+
+#contents_wrapper{
+  background:image-url("bg_pattern.png") repeat;
+  padding: 15px 0;
+  width:100%;
+}
+
+#contents{
+  width:$content_width;
+}
+
 .bar{
   height: 14px;
 }
 
-#footer{
-  background: white;
-  border-top: 1px solid #c3c3c3;
-  box-shadow: 0px -2px 5px #b1b1b1;
-  height: 45px;
-  width: 100%;
+#footer_wrapper{
+  background: $footer_background_color;
+  width:100%;
+  //border-top:1px solid #c3c3c3;
+  box-shadow: 0px -5px 5px #b1b1b1;
+  height:67px;
   top:100%;
   left:0;
+}
+
+#footer{
+  height: 67px;
+  width: $content_width;
 }
