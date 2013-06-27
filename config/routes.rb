@@ -58,4 +58,6 @@ Kidspark::Application.routes.draw do
   match 'photos/show' => 'photos#show'
   match 'about/show'=>'about#show'
   match 'photos/detail/:id'=>'photos#detail', :as => 'photos_detail'
+  match 'scatch/index' => 'scatch#index'
+  match 'tocome/index' => 'tocome#index'
 end

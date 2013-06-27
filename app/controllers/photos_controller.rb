@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
   def show
+    @tab_type = "photos" 
     @photos = Photo.all
     @default_from_datetime = -1.days.from_now
     @default_to_datetime = 0.days.from_now
@@ -28,6 +29,7 @@ end
   end
 
   def detail
+    @tab_type = "photos"
     @photo = Photo.where(id: params[:id]).first
     
   end

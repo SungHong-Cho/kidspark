@@ -39,8 +39,22 @@
   border-right: solid 2px white;
 }
 
+#header ul li:hover{
+  cursor: pointer
+}
+
 #header ul li:last-child{
   border-right:0px;
+}
+
+#gallery_tab{
+  background: image-url("photo_off.png") no-repeat center;
+  width:101px;
+  height:27px;
+}
+
+#gallery_tab.active{
+  background: image-url("photo_on.png") no-repeat center;
 }
 
 .bar{
