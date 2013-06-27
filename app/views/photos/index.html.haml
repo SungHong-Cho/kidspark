@@ -1,0 +1,17 @@
+#search_area
+  =form_tag("/photos/show") do
+    .search_fields_wrapper
+      =text_field_tag "datetimepicker1", nil, class:"search_box", placeholder:"시작 날짜를 입력해주세요"
+      \ ~  
+      =text_field_tag "datetimepicker2", nil, class:"search_box", placeholder:"종료 날짜를 입력해주세요"
+    =hidden_field_tag 'show_type', 'find'
+    .search_button_wrapper
+      =image_submit_tag "find_photo.png", :class => "search_button"
+#photo_area
+  -@photos.each do |photo|
+    =link_to(photos_detail_path(photo)) do
+      .box
+        .photo_box
+          =image_tag(photo.flickr_id)
+        .meta_box
+          =photo.created_at
