@@ -8,11 +8,28 @@
   %body
     #header
       .logo
-        //= image_tag "logo.png", alt: "Kidspark"
+        = image_tag "home.png", alt: "Kidspark Home"
       %ul
-        %li= link_to "About", "/about/show" 
-        %li JumpShot
+        %li{id:'gallery_tab', class:('active' if @tab_type == 'photos')}
+        %li
+          - if(@tab_type == "guide")  
+            = link_to image_tag("guide_on.png", alt: "행사안내"), photos_show_path 
+          - else 
+            = link_to image_tag("guide_off.png", alt: "행사안내"), photos_show_path
+        %li
+          - if(@tab_type == "scatch")  
+            = link_to image_tag("scatch_on.png", alt: "행사안내"), photos_show_path 
+          - else 
+            = link_to image_tag("scatch_off.png", alt: "행사안내"), photos_show_path
+        %li
+          - if(@tab_type == "tocome")  
+            = link_to image_tag("tocome_on.png", alt: "행사안내"), photos_show_path 
+          - else 
+            = link_to image_tag("tocome_off.png", alt: "행사안내"), photos_show_path
+   
+
     = yield
     .bar
     #footer
+      = image_tag "fotter.png", alt: "2013 by 키즈파크 양재, 주소: 서울특별시 서초구 양재동 232 AT센터 3층, 전화문의: 1588-7890, 행사기간:13.07.07 ~ 13.08.25, Notice : 점핑샷 촬영부스는 양재 키즈파크에서만 운영합니다!"
     = hidden_field_tag 'last_update_time', Time.now

@@ -2,9 +2,9 @@
   .wrapper
     #search_area
       =form_tag("/photos/show") do
-        =text_field_tag "datepicker1", nil, class:"search_box"
+        =text_field_tag "datetimepicker1", nil, class:"search_box"
         \ ~  
-        =datetime_select("find_to_datetime","post",{default:@to_datetime, use_month_numbers:true},{:class => "search_box"})
+        =text_field_tag "datetimepicker2", nil, class:"search_box"
         =hidden_field_tag 'show_type', 'find'
         =submit_tag "검색", :class => "search_button"
     #photo_area
