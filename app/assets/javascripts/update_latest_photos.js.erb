@@ -10,6 +10,8 @@ function update_latest_photos(){
         data: { last_update_time : $("#last_update_time").val() } ,
         success: function(data) {
             console.log(data);
+            $("#last_update_time").val(Math.round(new Date().getTime() / 1000));
+
             $.each(data, function(index, value){
                 $("#photo_area").prepend("<a href='/photos/detail/" + value.id + "'>" +
                                         "<div class='box'>" +
@@ -29,7 +31,7 @@ function update_latest_photos(){
                 new_photo.child(".meta_box").text(data.time);
                 $("#photo_area").append(new_photo);
             };*/
-            $("#last_update_time").val(Math.round(new Date().getTime() / 1000));
+
         }
     });
 }
