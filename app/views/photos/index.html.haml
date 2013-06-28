@@ -1,5 +1,7 @@
+#info_area
+  =image_tag("info_mention.png")
 #search_area
-  =form_tag("/photos/show") do
+  =form_tag("/photos/index") do
     .search_fields_wrapper
       =text_field_tag "datetimepicker1", nil, class:"search_box", placeholder:"시작 날짜를 입력해주세요"
       \ ~  
@@ -8,10 +10,6 @@
     .search_button_wrapper
       =image_submit_tag "find_photo.png", :class => "search_button"
 #photo_area
-  -@photos.each do |photo|
-    =link_to(photos_detail_path(photo)) do
-      .box
-        .photo_box
-          =image_tag(photo.flickr_id)
-        .meta_box
-          =photo.created_at
+  = render partial: "layouts/photo_box", locals: {photos: @photos}
+=paginate @photos
+

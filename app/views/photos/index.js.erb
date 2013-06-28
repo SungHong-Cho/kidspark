@@ -1,0 +1,6 @@
+$('#photo_area').append('<%= j render partial: "layouts/photo_box", locals: {photos: @photos} %>');
+<% if(@photos.current_page < @photos.num_pages) %>
+  $('.pagination').replaceWith('<%= j paginate(@photos) %>');
+<%else%>
+  $('.pagination').remove();
+<%end%>

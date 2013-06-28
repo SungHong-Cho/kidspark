@@ -1,11 +1,9 @@
-.plat
-  .detail_wrapper
-    .detail_photo_box
-      =image_tag(@photo.flickr_id)
-    .detail_datetime_box
-      =@photo.created_at
-    .detail_share_box
-      = link_to image_tag('/images/FaceBookIcon.png'), 'http://www.facebook.com/sharer.php?u=localhost:3000/photos/detail/'+@photo.id, :target => :blank 
-      .twshare.left
-        %a.twitter-share-button.left{"data-count" => "horizontal", "data-lang" => "ko", "data-size" => "large", "data-text" => "양재 키즈파크에서 점프샷!!!" ,"data-via" => "양재KidsPark", :href => "http://twitter.com/share"} 트윗하기
-        %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
+.detail_wrapper
+  .detail_photo_box
+    =image_tag(@photo.flickr_id)
+  .detail_datetime_box
+    =@photo.created_at
+  .detail_share_box
+    = link_to image_tag("FB-f-Logo__blue_29.png"), 'http://www.facebook.com/sharer.php?u=localhost:3000/photos/detail/'+@photo.id, :target => :blank
+    %a.twitter-share-button{"data-count" => "none", "data-lang" => "ko", "data-size" => "large", "data-text" => "양재 키즈파크에서 점프샷!!!" ,"data-via" => "양재KidsPark", :href => "http://twitter.com/share"}
+    %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}

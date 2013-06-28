@@ -17,7 +17,7 @@ $(function() {
     currentText: '지금',
     closeText: '적용',
 
-    timeFormat: "hh:mm tt",
+    timeFormat: "HH:mm",
     minuteGrid: 10,
     hourMin: 10,
     hourMax: 20,
@@ -43,7 +43,7 @@ $(function() {
     currentText: '지금',
     closeText: '적용',
 
-    timeFormat: "hh:mm tt",
+    timeFormat: "HH:mm",
     minuteGrid: 10,
     hourMin: 10,
     hourMax: 20,

@@ -48,16 +48,17 @@ Kidspark::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'photos#show'
+  root :to => 'photos#index'
 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-  get 'photos/show', to: 'photos#show'
+  get 'photos/index', to: 'photos#index'
+  post 'photos/index', to: 'photos#index'
   post 'photos', to: 'photos#create'
-  match 'about/show'=>'about#show'
+  match 'about/index'=>'about#index'
   match 'photos/detail/:id'=>'photos#detail', :as => 'photos_detail'
   match 'scatch/index' => 'scatch#index'
   match 'tocome/index' => 'tocome#index'
