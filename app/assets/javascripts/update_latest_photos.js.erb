@@ -1,11 +1,11 @@
 $(function(){
-
+    setInterval(update_latest_photos, 2000);
 });
 
 function update_latest_photos(){
     $.ajax({
         type: 'get',
-        url: 'photos/show',
+        url: 'photos/index',
         dataType: "json",
         data: { last_update_time : $("#last_update_time").val() } ,
         success: function(data) {
