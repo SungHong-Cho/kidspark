@@ -3,6 +3,7 @@ $(function(){
 });
 
 function update_latest_photos(){
+    var request_time = Math.round(new Date().getTime() / 1000);
     $.ajax({
         type: 'get',
         url: 'photos/index',
@@ -10,7 +11,7 @@ function update_latest_photos(){
         data: { last_update_time : $("#last_update_time").val() } ,
         success: function(data) {
             console.log(data);
-            $("#last_update_time").val(Math.round(new Date().getTime() / 1000));
+            $("#last_update_time").val(request_time);
 
             $.each(data, function(index, value){
                 $("#photo_area").prepend("<a href='/photos/detail/" + value.id + "'>" +
