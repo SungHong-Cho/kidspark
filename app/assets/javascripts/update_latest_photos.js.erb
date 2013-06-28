@@ -29,6 +29,7 @@ function update_latest_photos(){
                 new_photo.child(".meta_box").text(data.time);
                 $("#photo_area").append(new_photo);
             };*/
+            $("#last_update_time").val(Math.round(new Date().getTime() / 1000));
         }
     });
 }

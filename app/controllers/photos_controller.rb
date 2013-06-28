@@ -19,7 +19,7 @@ class PhotosController < ApplicationController
       }
 
       format.json {
-        @photos = Photo.where(:created_at.gt => params[:last_update_time])
+        @photos = Photo.where(:created_at.gt => Time.at(params[:last_update_time].to_i))
         render js: @photos.to_json
       }
 
