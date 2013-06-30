@@ -117,8 +117,8 @@ a:hover {
   margin: $margin_px $margin_px/2 0px $margin_px/2;
   padding: 0;
   display: inline-block;
-  width: $photo_small_width;
-  height: $photo_small_height + $meta_small_height + 10;
+  //width: $photo_small_width;
+  //height: $photo_small_height + $meta_small_height + 10;
   overflow:auto;
   box-shadow:0px 2px 5px $box_shadow_color;
 }
@@ -132,8 +132,8 @@ a:hover {
   border-bottom: 2px #32AAFF;
   margin: 0 auto;
   padding: 0;
-  width: $photo_small_width;
-  height: $photo_small_height;
+  //width: $photo_small_width;
+  //height: $photo_small_height;
 }
 
 .box .meta_box{
@@ -141,8 +141,8 @@ a:hover {
   border: 0px; 
   margin: 0 auto;
   padding: 5px 0;
-  width: $photo_small_width;
-  height: $meta_small_height;
+  //width: $photo_small_width;
+  //height: $meta_small_height;
   text-align:center;
 }
 
