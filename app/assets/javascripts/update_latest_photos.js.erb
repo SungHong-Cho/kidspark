@@ -10,7 +10,7 @@ function update_latest_photos(){
         dataType: "json",
         data: { last_update_time : $("#last_update_time").val() } ,
         success: function(data) {
-            console.log(data);
+            //console.log(data);
             $("#last_update_time").val(request_time);
 
             $.each(data, function(index, value){

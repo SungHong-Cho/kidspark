@@ -8,13 +8,13 @@ class PhotosController < ApplicationController
         @tab_type = "photos"
         if(params[:show_type] == "find")
           @from_datetime = params[:datetimepicker1].to_time
-      @to_datetime = params["datetimepicker2"].to_time
+          @to_datetime = params["datetimepicker2"].to_time
           @from_timestamp = @from_datetime.to_time.to_i
           @to_timestamp = @to_datetime.to_time.to_i
 
-          @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).page(params[:page]).per(10)
+          @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).desc(:created_at).page(params[:page]).per(10)
         else
-          @photos = Photo.all.page(params[:page]).per(10)
+          @photos = Photo.all.desc(:created_at).page(params[:page]).per(10)
         end
       }
 
@@ -27,13 +27,13 @@ class PhotosController < ApplicationController
 
         if(params[:show_type] == "find")
           @from_datetime = params[:datetimepicker1].to_time
-      @to_datetime = params["datetimepicker2"].to_time
+          @to_datetime = params["datetimepicker2"].to_time
           @from_timestamp = @from_datetime.to_time.to_i
           @to_timestamp = @to_datetime.to_time.to_i
 
-          @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).page(params[:page]).per(10)
+          @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).desc(:created_at).page(params[:page]).per(10)
         else
-          @photos = Photo.all.page(params[:page]).per(10)
+          @photos = Photo.all.desc(:created_at).page(params[:page]).per(10)
         end
       }
     end

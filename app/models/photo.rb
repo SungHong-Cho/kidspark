@@ -24,21 +24,21 @@ class Photo
     r
   end
 
-  def url(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "", "jpg"] end
-  def url_m(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_m", "jpg"] end
-  def url_s(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_s", "jpg"] end
-  def url_t(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_t", "jpg"] end
-  def url_b(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_b", "jpg"] end
-  def url_z(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_z", "jpg"] end
-  def url_q(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_q", "jpg"] end
-  def url_n(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_n", "jpg"] end
-  def url_c(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_c", "jpg"] end
-  def url_o(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.originalsecret, "_o", r.originalformat] end
-  def url_profile(r); URL_PROFILE + (r.owner.respond_to?(:nsid) ? r.owner.nsid : r.owner) + "/" end
-  def url_short(r); URL_SHORT + base58(r.id) end
-  def url_short_m(r); URL_SHORT + "img/" + base58(r.id) + "_m.jpg" end
-  def url_short_s(r); URL_SHORT + "img/" + base58(r.id) + ".jpg" end
-  def url_short_t(r); URL_SHORT + "img/" + base58(r.id) + "_t.jpg" end
-  def url_short_q(r); URL_SHORT + "img/" + base58(r.id) + "_q.jpg" end
-  def url_short_n(r); URL_SHORT + "img/" + base58(r.id) + "_n.jpg" end
+  def url; PHOTO_SOURCE_URL % [self.farm, self.server, self.flickr_id, self.secret, "", "jpg"] end
+  def url_m; PHOTO_SOURCE_URL % [self.farm, self.server, self.flickr_id, self.secret, "_m", "jpg"] end
+  def url_s; PHOTO_SOURCE_URL % [self.farm, self.server, self.flickr_id, self.secret, "_s", "jpg"] end
+  def url_t; PHOTO_SOURCE_URL % [self.farm, self.server, self.flickr_id, self.secret, "_t", "jpg"] end
+  def url_b; PHOTO_SOURCE_URL % [self.farm, self.server, self.flickr_id, self.secret, "_b", "jpg"] end
+  def url_z; PHOTO_SOURCE_URL % [self.farm, self.server, self.flickr_id, self.secret, "_z", "jpg"] end
+  def url_q; PHOTO_SOURCE_URL % [self.farm, self.server, self.flickr_id, self.secret, "_q", "jpg"] end
+  def url_n; PHOTO_SOURCE_URL % [self.farm, self.server, self.flickr_id, self.secret, "_n", "jpg"] end
+  def url_c; PHOTO_SOURCE_URL % [self.farm, self.server, self.flickr_id, self.secret, "_c", "jpg"] end
+  def url_o; PHOTO_SOURCE_URL % [self.farm, self.server, self.flickr_id, self.originalsecret, "_o", self.originalformat] end
+  def url_profile; URL_PROFILE + (self.owner.respond_to?(:nsid) ? self.owner.nsid : self.owner) + "/" end
+  def url_short; URL_SHORT + base58(self.flickr_id) end
+  def url_short_m; URL_SHORT + "img/" + base58(self.flickr_id) + "_m.jpg" end
+  def url_short_s; URL_SHORT + "img/" + base58(self.flickr_id) + ".jpg" end
+  def url_short_t; URL_SHORT + "img/" + base58(self.flickr_id) + "_t.jpg" end
+  def url_short_q; URL_SHORT + "img/" + base58(self.flickr_id) + "_q.jpg" end
+  def url_short_n; URL_SHORT + "img/" + base58(self.flickr_id) + "_n.jpg" end
 end

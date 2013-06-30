@@ -1,7 +1,8 @@
 -photos.each do |photo|
   =link_to(photos_detail_path(photo)) do
+    //= debug photo
     .box
       .photo_box
-        =image_tag(photo.flickr_id)
+        =image_tag(photo.url_m)
       .meta_box
         =photo.created_at
