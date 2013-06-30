@@ -13,7 +13,7 @@
  *= require_tree .
  */
 
-$content_width:1024px;
+$content_width:1025px;
 $header_background_color:#1a1a1a;
 $footer_background_color:#a8a8a8;
 
@@ -35,7 +35,7 @@ body{
 }
 
 #header .logo{
-  margin: 10px 0px 10px 20px;
+  margin: 10px 0px 10px 0px;
   vertical-align:middle;
   display:inline-block;
 }
@@ -99,6 +99,13 @@ body{
 
 #tocome_tab.active{
   background: image-url("tocome_on.png") no-repeat center;
+}
+
+#blog_tab{
+  background:image-url("blog.png") no-repeat top;
+  margin-left:25px;
+  width:80px;
+  height:26px;
 }
 
 #contents_wrapper{

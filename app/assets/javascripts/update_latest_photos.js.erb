@@ -6,7 +6,7 @@ function update_latest_photos(){
     var request_time = Math.round(new Date().getTime() / 1000);
     $.ajax({
         type: 'get',
-        url: 'photos/index',
+        url: '/photos/index',
         dataType: "json",
         data: { last_update_time : $("#last_update_time").val() } ,
         success: function(data) {
@@ -17,7 +17,7 @@ function update_latest_photos(){
                 $("#photo_area").prepend("<a href='/photos/detail/" + value.id + "'>" +
                                         "<div class='box'>" +
                                         "<div class='photo_box'>" +
-                                        "<img src='" + url_t(value) + "'/>" +
+                                        "<img src='" + url_n(value) + "'/>" +
                                         "</div>" +
                                         "<div class='meta_box'>" + value.created_at + "</div>" +
                                         "</div>" +
