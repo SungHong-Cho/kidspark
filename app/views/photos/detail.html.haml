@@ -2,7 +2,7 @@
   .detail_photo_box
     =image_tag(@photo.url_b)
   .detail_datetime_box
-    =@photo.created_at.localtime.strftime('%Y-%mm-%dd %HH:%MM:%SS')
+    =@photo.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S')
   .detail_share_box
     = link_to image_tag("FB-f-Logo__blue_29.png"), 'http://www.facebook.com/sharer.php?u=localhost:3000/photos/detail/'+@photo.id, :target => :blank
     %a.twitter-share-button{"data-count" => "none", "data-lang" => "ko", "data-size" => "large", "data-text" => "양재 키즈파크에서 점프샷!!!" ,"data-via" => "양재KidsPark", :href => "http://twitter.com/share"}
