@@ -5,4 +5,4 @@
       .photo_box
         =image_tag(photo.url_n)
       .meta_box
-        =photo.created_at.strftime('%Y-%m-%-d %k:%M:%S')
+        =photo.created_at.localtime.strftime('%Y-%mm-%dd %HH:%MM:%SS')
