@@ -1,10 +1,10 @@
-.detail_wrapper
-  .detail_photo_box
-    =image_tag(@photo.url_b)
-  .detail_datetime_box
+.mobile_detail_wrapper
+  .mobile_detail_photo_box
+    =image_tag(@photo.url_z)
+  .mobile_detail_datetime_box
     =@photo.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S')
-  .detail_share_box
-    = link_to image_tag("facebook-big.jpg"), 'http://www.facebook.com/sharer.php?u=localhost:3000/photos/detail/'+@photo.id, :target => :blank
+  .mobile_detail_share_box
+    = link_to image_tag("facebook-icon.png"), 'http://www.facebook.com/sharer.php?u=localhost:3000/photos/detail/'+@photo.id, :target => :blank
     %a{"data-count" => "none", "data-lang" => "ko", "data-size" => "large", "data-text" => "양재 키즈파크에서 점프샷!!!" ,"data-via" => "양재KidsPark", :href => "http://twitter.com/share"}
-      =image_tag("twitter-big.jpg")
+      =image_tag("twitter-icon.png")
     %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}

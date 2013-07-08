@@ -37,6 +37,13 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    columnize (0.3.6)
+    debugger (1.6.0)
+      columnize (>= 0.3.1)
+      debugger-linecache (~> 1.2.0)
+      debugger-ruby_core_source (~> 1.2.1)
+    debugger-linecache (1.2.0)
+    debugger-ruby_core_source (1.2.3)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -60,6 +67,10 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
+    mobileesp_converted (0.2.1)
+    mobvious (0.3.2)
+      mobileesp_converted (~> 0.2.0)
+      rack (>= 1.1.0)
     mongoid (3.0.23)
       activemodel (~> 3.1)
       moped (~> 1.2)
@@ -124,10 +135,12 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  debugger
   haml
   jquery-rails
   jquery-ui-rails
   kaminari
+  mobvious
   mongoid (~> 3.0.0)
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)

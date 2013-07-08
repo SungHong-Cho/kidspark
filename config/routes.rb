@@ -1,4 +1,12 @@
 Kidspark::Application.routes.draw do
+  get "mobile_jumping/index"
+
+  match 'mobile_jumping/detail/:id'=>'mobile_jumping#detail', as:'mobile_jumping_detail'
+
+  get "mobile_gallery/index"
+
+  get "mobile_facilities/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

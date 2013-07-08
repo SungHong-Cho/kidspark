@@ -24,6 +24,7 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
+gem 'mobvious'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -37,4 +38,4 @@ gem 'kaminari'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'

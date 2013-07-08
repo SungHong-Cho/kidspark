@@ -17,6 +17,10 @@ class PhotosController < ApplicationController
           @photos = Photo.all.desc(:created_at).page(params[:page]).per(10)
         end
       }
+     
+      format.mobile {
+        redirect_to controller: "mobile_facilities", action: "index"
+      }
 
       format.json {
         @photos = Photo.where(:created_at.gt => Time.at(params[:last_update_time].to_i))
@@ -44,8 +48,15 @@ class PhotosController < ApplicationController
   end
 
   def detail
-    @tab_type = "photos"
-    @photo = Photo.where(id: params[:id]).first
+    respond_to  do |format|
+      format.html{
+        @tab_type = "photos"
+        @photo = Photo.where(id: params[:id]).first
+      }
+      format.mobile{
+        redirect_to controller: "mobile_jumping", action: "detail/"+params[:id]
+      }
+    end
   end
 
   def create

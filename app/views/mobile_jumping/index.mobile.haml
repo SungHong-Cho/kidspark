@@ -1,0 +1,11 @@
+#mobile_photo_area
+  = render partial: "layouts/photo_box", locals: { photos: @photos}
+#mobile_page_area
+  =paginate @photos
+#mobile_search_area
+  =form_tag("/photos/index") do
+    #mobile_search_fields_wrapper
+      =text_field_tag 'datepicker', nil, class: "mobile_search_box", placeholder: "검색 날짜를 입력해주세요"
+    = hidden_field_tag 'show_type', 'find'
+    #mobile_search_button_wrapper
+      =image_submit_tag "find_photo.png", class: "mobile_search_button"

@@ -14,11 +14,22 @@
  */
 
 $content_width:1025px;
-$header_background_color:#1a1a1a;
+$header_background_color:#1e1e1e;
 $footer_background_color:#a8a8a8;
 
 body{
   background:$footer_background_color;
+}
+
+#header{
+  height:77px;
+  width:$content_width;
+}
+  
+#header .logo{
+  margin: 10px 0px 10px 0px;
+  vertical-align:middle;
+  display:inline-block;
 }
 
 #header_wrapper{
@@ -29,16 +40,6 @@ body{
   width:100%;
 }
 
-#header{
-  height:77px;
-  width:$content_width;
-}
-
-#header .logo{
-  margin: 10px 0px 10px 0px;
-  vertical-align:middle;
-  display:inline-block;
-}
 
 #header ul{
   margin: 38px 20px 0px 10px;
@@ -132,6 +133,8 @@ body{
 }
 
 #footer{
-  height: 67px;
+  padding: 5px 3px;
   width: $content_width;
+  color:#fff;
 }
+
