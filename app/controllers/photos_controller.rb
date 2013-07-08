@@ -67,4 +67,11 @@ class PhotosController < ApplicationController
       format.json {render nothing: true}
     end
   end
+
+  def download
+    require 'open-uri'
+    @photo = Photo.where(id: params[:id]).first.url_b
+    @file = open(@photo).read
+    send_data @file, type: 'image/jpg', disposition:'attachment'
+  end
 end
