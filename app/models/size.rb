@@ -3,8 +3,8 @@ class Size
   include Mongoid::Timestamps
 
   field :label
-  field :width, type: Number
-  field :height, type: Number
+  field :width, type: Integer
+  field :height, type: Integer
   field :source
   field :url
   field :media
