@@ -8,5 +8,5 @@ class Size
   field :source
   field :url
   field :media
-  embeded_in :photo
+  embedded_in :photo
 end
