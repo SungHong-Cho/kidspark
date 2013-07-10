@@ -3,13 +3,15 @@ require "bundler/capistrano"
 server "54.250.162.126", :web, :app, :db
 
 set :application, "kidspark"
-set :user, "root"
-set :deploy_to, ""
+set :user, "deployer"
+set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
+set :use_sudo, false
 
 set :scm, "git"
 set :repository,  "git@github.com:SungHong-Cho/#{application}.git"
 set :branch, "master"
+set :ssh_options, {:forward_agent => true}
 
 
 default_run_options[:pty] = true

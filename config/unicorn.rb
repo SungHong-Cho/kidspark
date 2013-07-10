@@ -21,13 +21,13 @@ worker_processes 4
 
 # Help ensure your application will always spawn in the symlinked
 # "current" directory that Capistrano sets up.
-APP_PATH = "/home/ubuntu/kidspark"
+APP_PATH = "/home/deployer/apps/kidspark/current"
 working_directory APP_PATH
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-listen APP_PATH + "/tmp/.unicorn.sock", :backlog => 64
-listen 8080, :tcp_nopush => true
+listen "/tmp/unicorn.kidspark.sock"
+#listen 8080, :tcp_nopush => true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 timeout 30
