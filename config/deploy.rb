@@ -3,20 +3,18 @@ require "bundler/capistrano"
 server "54.250.162.126", :web, :app, :db
 
 set :application, "kidspark"
-set :user, "deployer"
+set :user, "ubuntu"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, "git"
-set :repository,  "git@github.com:SungHong-Cho/#{application}.git"
+set :repository,  "git://github.com/SungHong-Cho/#{application}.git"
 set :branch, "master"
-set :ssh_options, {:forward_agent => true}
-
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
-
+ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "darkzin.pem")]
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
