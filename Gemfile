@@ -17,10 +17,10 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
-  gem 'haml'
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'haml-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
