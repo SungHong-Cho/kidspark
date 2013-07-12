@@ -1,4 +1,6 @@
 Kidspark::Application.routes.draw do
+  resources :sessions
+
   get "mobile_jumping/index"
 
   match 'mobile_jumping/detail/:id'=>'mobile_jumping#detail', as:'mobile_jumping_detail'
