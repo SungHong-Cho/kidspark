@@ -5,7 +5,7 @@ $(function(){
 function update_latest_photos(){
 //    var request_time = Math.round(new Date().getTime() / 1000);
       var request_time = parseInt($("#last_update_time").val()) + 2;
-      $("#last_update_time").val(request_time);
+
     $.ajax({
         type: 'get',
         url: '/photos/index',
