@@ -13,10 +13,11 @@ function update_latest_photos(){
         data: { last_update_time : $("#last_update_time").val() } ,
         success: function(data) {
             //console.log(data);
-            //$("#last_update_time").val(request_time);
+            $("#last_update_time").val(request_time);
 
             $.each(data, function(index, value){
-                var dateTime = value.created_at.replace(/[T]/, " ").replace(/[Z]/, ""); 
+                //var dateTime = value.created_at.replace(/[T]/, " ").replace(/[Z]/, "");
+		var dateTime = new Date(value.created_at)
                 $("#photo_area").prepend("<a href='/photos/detail/" + value.id + "'>" +
                                         "<div class='box'>" +
                                         "<div class='photo_box'>" +
