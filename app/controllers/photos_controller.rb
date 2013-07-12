@@ -25,7 +25,7 @@ class PhotosController < ApplicationController
       format.json {
         @photos = Photo.where(:created_at.gt => Time.at(params[:last_update_time].to_i))
         @photos.each {|photo|
-	dateTime = photo.created_at.localtime.to_s
+	dateTime = photo.created_at.localtime.to_s.gsub(/[TZ]/, 'Z' => "", 'T' => " ")
 	photo.created_at = dateTime[0...dateTime.rindex(" ")]
 	}
         render js: @photos.to_json
