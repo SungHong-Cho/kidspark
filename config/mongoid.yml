@@ -86,6 +86,6 @@ production:
     default:
       database: kidspark_production
       hosts:
-        - 54.250.162.126:27017
+        - localhost:27017
       username: kidspark
       password: seed1314
