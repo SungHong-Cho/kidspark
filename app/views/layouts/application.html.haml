@@ -24,6 +24,10 @@
             %li{id:'blog_tab'}
 
     #contents_wrapper 
+      -if current_user
+        .admin_info
+          관리자로 접속되어있습니다.
+          = link_to "Log Out", logout_path 
       #contents
         =yield
     #footer_wrapper   

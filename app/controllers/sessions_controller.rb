@@ -3,12 +3,17 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_id(params[:id])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to root_url, notice: "로그인 되었습니다"
+    user = User.where(:name => params[:name]).first
+    if user && authenticate(user.name, params[:password])
+      session[:user_id] = user.name
+      redirect_to root_url, notice: "Log in Success"
     else
-      flash.now.alert = "아이디나 패스워드가 잘못되었습니다"
+      #redirect_to login_path 
     end
+  end
+  
+  def destory
+    session[:user_id] = nil
+    redirect_to root_url, notice: "Log Out"
   end
 end

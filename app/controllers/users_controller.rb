@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
 
-=======
->>>>>>> 6145b7bc951040432779e85f46fc9297e681713c
+#def authenticate(name, password)
+#  user = User.where(:name => name).first
+#  if user.password.to_s == password.to_s
+#    return true
+#  else
+#    return false
+#  end
+#end
+
 end

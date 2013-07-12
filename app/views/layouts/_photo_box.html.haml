@@ -5,3 +5,5 @@
         =image_tag(photo.url_n)
       .meta_box
         =photo.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S')
+        -if current_user
+          = link_to "삭제", photos_destory_path(photo) 
