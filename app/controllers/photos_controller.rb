@@ -70,4 +70,9 @@ class PhotosController < ApplicationController
     @file = open(@photo).read
     send_data @file, type: 'image/jpg', disposition:'attachment'
   end
+ 
+  def destroy
+    @photo = Photo.where(id: params[:id]).first
+    @photo.delete
+  end
 end

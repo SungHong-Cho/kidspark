@@ -1,4 +1,8 @@
 Kidspark::Application.routes.draw do
+  resources :sessions
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destory', as: 'logout'
+
   get "mobile_jumping/index"
 
   match 'mobile_jumping/detail/:id'=>'mobile_jumping#detail', as:'mobile_jumping_detail'
@@ -71,4 +75,5 @@ Kidspark::Application.routes.draw do
   match 'scatch/index' => 'scatch#index'
   match 'tocome/index' => 'tocome#index'
   match 'photos/download/:id'=>'photos#download', :as => 'photos_download'
+  match 'photos/destroy/:id'=>'photos#destroy', :as => 'photos_destroy'
 end

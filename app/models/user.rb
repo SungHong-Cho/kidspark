@@ -1,7 +1,7 @@
 class User
   include Mongoid::Document
-  field :id, type: String
-  field :password_digest, type: String
-  
-  has_secure_password
+  field :name, type: String
+  field :password, type: String
+
+  validates_uniqueness_of :name
 end

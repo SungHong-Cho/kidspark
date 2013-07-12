@@ -1,0 +1,13 @@
+%h1 관리자 로그인
+
+= form_tag sessions_path do
+  .field
+    = label_tag :name
+    %br
+    = text_field_tag :name, params[:name]
+  .field
+    = label_tag :password
+    %br
+    = password_field_tag :password
+  .actions
+    = submit_tag "로그인"
