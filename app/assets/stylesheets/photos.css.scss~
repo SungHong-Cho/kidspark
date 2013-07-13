@@ -99,8 +99,6 @@ a:hover {
   margin: 14px 3px 0px 3px;
   padding: 0;
   display: inline-block;
-  zoom: 1;
-  .display: inline;
   //width: $photo_small_width;
   //height: $photo_small_height + $meta_small_height + 10;
   overflow:auto;
