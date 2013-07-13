@@ -75,6 +75,6 @@ Kidspark::Application.routes.draw do
   match 'scatch/index' => 'scatch#index'
   match 'tocome/index' => 'tocome#index'
   match 'photos/download/:id'=>'photos#download', :as => 'photos_download'
-  match 'photos/destroy/:id'=>'photos#destroy', :as => 'photos_destroy'
+  match 'photos/destroy'=>'photos#destroy', :as => 'photos_destroy'
   match 'photos/destroy_all'=>'photos#destroy_all', :as => 'photos_destroy_all'
 end

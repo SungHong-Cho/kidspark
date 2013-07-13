@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require jquery-ui-timepicker-addon
-// require_tree .
+//= require_tree .

@@ -6,4 +6,5 @@
     .meta_box
       =photo.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S')
   -if current_user
-    = button_to "삭제", photos_destroy_path(photo), :method => :delete
+    /= button_to "삭제", photos_destroy_path(photo), :method => :delete
+    = check_box_tag "delete_#{photo.id}", photo.id, name: "photo_ids[]"

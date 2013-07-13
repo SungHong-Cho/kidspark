@@ -18,7 +18,7 @@ class PhotosController < ApplicationController
           @photos = Photo.all.desc(:created_at).page(params[:page]).per(9)
         end
       }
-     
+
       format.mobile {
         redirect_to controller: "mobile_facilities", action: "index"
       }
@@ -72,10 +72,14 @@ class PhotosController < ApplicationController
     filename = "양재_키즈파크_점핑샷_" + @photo.created_at.strftime("%Y년_%m월_%d일") + ".jpg"
     send_data @file, filename: filename, type: 'image/jpeg', disposition: 'attachment'
   end
- 
+
   def destroy
-    @photo = Photo.where(id: params[:id]).first
-    @photo.delete
+    @photos = Photo.find_by_id(params[:photo_ids])
+    @photos.each do |photo|
+      photo.destroy
+    end
+    # @photo = Photo.where(id: params[:id]).first
+    # @photo.delete
     redirect_to root_url
   end
 
