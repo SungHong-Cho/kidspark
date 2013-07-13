@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class PhotosController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:create]
   http_basic_authenticate_with name: "skyseed", password:"12345", only: [:create]
@@ -12,9 +13,9 @@ class PhotosController < ApplicationController
           @from_timestamp = @from_datetime.to_time.to_i
           @to_timestamp = @to_datetime.to_time.to_i
 
-          @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).desc(:created_at).page(params[:page]).per(10)
+          @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).desc(:created_at).page(params[:page]).per(9)
         else
-          @photos = Photo.all.desc(:created_at).page(params[:page]).per(10)
+          @photos = Photo.all.desc(:created_at).page(params[:page]).per(9)
         end
       }
      
@@ -35,9 +36,9 @@ class PhotosController < ApplicationController
           @from_timestamp = @from_datetime.to_time.to_i
           @to_timestamp = @to_datetime.to_time.to_i
 
-          @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).desc(:created_at).page(params[:page]).per(10)
+          @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).desc(:created_at).page(params[:page]).per(9)
         else
-          @photos = Photo.all.desc(:created_at).page(params[:page]).per(10)
+          @photos = Photo.all.desc(:created_at).page(params[:page]).per(9)
         end
       }
     end
@@ -66,13 +67,23 @@ class PhotosController < ApplicationController
 
   def download
     require 'open-uri'
-    @photo = Photo.where(id: params[:id]).first.url_b
-    @file = open(@photo).read
-    send_data @file, type: 'image/jpg', disposition:'attachment'
+    @photo = Photo.where(id: params[:id]).first
+    @file = open(@photo.url_b).read
+    filename = "양재_키즈파크_점핑샷_" + @photo.created_at.strftime("%Y년_%m월_%d일") + ".jpg"
+    send_data @file, filename: filename, type: 'image/jpeg', disposition: 'attachment'
   end
  
   def destroy
     @photo = Photo.where(id: params[:id]).first
     @photo.delete
+    redirect_to root_url
+  end
+
+  def destroy_all
+    @photo = Photo.all
+    @photo.each do |p|
+      p.delete
+    end
+    redirect_to root_url
   end
 end

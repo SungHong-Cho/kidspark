@@ -3,6 +3,9 @@
     =image_tag(@photo.url_b)
   .detail_datetime_box
     =@photo.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S')
+    -if current_user
+      = link_to "삭제", photos_destroy_path(@photo)
+
   .detail_share_box
     %p "시원하고 신나는 에어바운스와 에어슬라이드, 30m 점프존 등이 있는 양재 키즈파크에서 점프샷 한장!!"
     = link_to image_tag("facebook-big.jpg"), 'http://www.facebook.com/sharer.php?u=54.250.162.126/photos/detail/'+@photo.id, :target => :blank

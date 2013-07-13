@@ -36,10 +36,15 @@ a:hover {
 
 #info_area{
   display:inline-block;
+  zoom:1;
+  .display:inline;
+  
 }
 
 #search_area{
-  display:inline-block;
+display:inline-block;
+  zoom:1;
+  .display:inline;
   float:right;
   border-radius:5px;
   text-align:center;
@@ -81,11 +86,11 @@ a:hover {
 #search_fields_wrapper{
   position:relative;
   top: -5px;
-  display:inline-block;
+  display:inline-block;*display:inline;*zoom:1;
 }
 
 #search_button_wrapper{
-  display:inline-block;
+  display:inline-block;*display:inline;*zoom:1;
 }
 
 #photo_area{
@@ -98,9 +103,9 @@ a:hover {
   border-radius:5px;
   margin: 14px 3px 0px 3px;
   padding: 0;
-  display: inline-block;
-  zoom: 1;
-  .display: inline;
+  display:inline-block;
+  zoom:1;
+  .display:inline;
   //width: $photo_small_width;
   //height: $photo_small_height + $meta_small_height + 10;
   overflow:auto;

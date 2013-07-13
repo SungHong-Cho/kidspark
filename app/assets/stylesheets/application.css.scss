@@ -29,7 +29,7 @@ body{
 #header .logo{
   margin: 10px 0px 10px 0px;
   vertical-align:middle;
-  display:inline-block;
+  display:inline-block;*display:inline;*zoom:1;
 }
 
 #header_wrapper{
@@ -44,7 +44,7 @@ body{
 #header ul{
   margin: 38px 20px 0px 10px;
   padding: 0;
-  display:inline-block;
+  display:inline-block;*display:inline;*zoom:1;
   float:right;
 }
 
