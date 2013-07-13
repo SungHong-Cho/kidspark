@@ -21,16 +21,6 @@ body{
   background:$footer_background_color;
 }
 
-#header{
-  height:77px;
-  width:$content_width;
-}
-  
-#header .logo{
-  margin: 10px 0px 10px 0px;
-  vertical-align:middle;
-  display:inline-block;*display:inline;*zoom:1;
-}
 
 #header_wrapper{
   background:$header_background_color;
@@ -40,74 +30,95 @@ body{
   width:100%;
 }
 
-
-#header ul{
-  margin: 38px 20px 0px 10px;
-  padding: 0;
-  display:inline-block;*display:inline;*zoom:1;
-  float:right;
+#header{
+  height:77px;
+  width:$content_width;
+  padding: 10px 20px 10px 0;
+}
+  
+#header .logo{
+float: left;
 }
 
-#header ul li{
-  list-style-type: none;
-  display: inline-block;
-  border-right: solid 2px white;
+.menu {
+      float: right;
+      margin-top: 30px;
+      word-spacing: 5px;
+      vertical-align:top
+      }             
+
+.menu a {
+font-size: 27px;
+vertical-align: top;
 }
 
-#header ul li:hover{
-  cursor: pointer
+.menu #blog_tab {
+font-size: 1em;
 }
 
-#header ul li:last-child{
-  border-right:0px;
-}
 
-#gallery_tab{
-  background: image-url("photo_off.png") no-repeat center;
-  width:101px;
-  height:27px;
-}
+/* #header ul{ */
+/*   display:inline; */
+/*   float:right; */
+/* } */
 
-#gallery_tab.active{
-  background: image-url("photo_on.png") no-repeat center;
-}
+/* #header ul li{ */
+/*   list-style-type: none; */
+/*   display: inline-block; */
+/*   border-right: solid 2px white; */
+/* } */
 
-#about_tab{
-  background: image-url("about_off.png") no-repeat center;
-  width:65px;
-  height:27px;
-}
+/* #header ul li:hover{ */
+/*   cursor: pointer */
+/* } */
 
-#about_tab.active{
-  background: image-url("about_on.png") no-repeat center;
-}
+/* #header ul li:last-child{ */
+/*   border-right:0px; */
+/* } */
 
-#scatch_tab{
-  background: image-url("scatch_off.png") no-repeat center;
-  width:80px;
-  height:27px;
-}
 
-#scatch_tab.active{
-  background: image-url("scatch_on.png") no-repeat center;
-}
 
-#tocome_tab{
-  background: image-url("tocome_off.png") no-repeat center;
-  width:64px;
-  height:27px;
-}
+/* #gallery_tab{ */
+/*   background: image-url("photo_off.png") no-repeat center; */
+/*   width:101px; */
+/*   height:27px; */
+/* } */
 
-#tocome_tab.active{
-  background: image-url("tocome_on.png") no-repeat center;
-}
+/* #gallery_tab.active{ */
+/*   background: image-url("photo_on.png") no-repeat center; */
+/* } */
 
-#blog_tab{
-  background:image-url("blog.png") no-repeat top;
-  margin-left:25px;
-  width:80px;
-  height:26px;
-}
+/* #about_tab{ */
+/*   background: image-url("about_off.png") no-repeat center; */
+/*   width:65px; */
+/*   height:27px; */
+/* } */
+
+/* #about_tab.active{ */
+/*   background: image-url("about_on.png") no-repeat center; */
+/* } */
+
+/* #scatch_tab{ */
+/*   background: image-url("scatch_off.png") no-repeat center; */
+/*   width:80px; */
+/*   height:27px; */
+/* } */
+
+/* #scatch_tab.active{ */
+/*   background: image-url("scatch_on.png") no-repeat center; */
+/* } */
+
+/* #tocome_tab{ */
+/*   background: image-url("tocome_off.png") no-repeat center; */
+/*   width:64px; */
+/*   height:27px; */
+/* } */
+
+/* #tocome_tab.active{ */
+/*   background: image-url("tocome_on.png") no-repeat center; */
+/* } */
+
+
 
 #contents_wrapper{
   background:image-url("bg_pattern.png") repeat;

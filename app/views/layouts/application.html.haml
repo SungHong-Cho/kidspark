@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Kidspark
+    %title 양재 키즈파크 점핑샷!! 양제AT센터에서 7월 5일부터 8월 25일까지!
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -9,19 +9,14 @@
   %body
     #header_wrapper
       #header
-        .logo
-          = image_tag "home.png", alt: "Kidspark Home"
-        %ul
-          = link_to photos_index_path do
-            %li{id:'gallery_tab', class:('active' if @tab_type == 'photos')}
-          = link_to about_index_path do
-            %li{id:'about_tab', class:('active' if @tab_type == 'about')}
-          = link_to scatch_index_path do
-            %li{id:'scatch_tab', class:('active' if @tab_type == 'scatch')}
-          = link_to tocome_index_path do
-            %li{id:'tocome_tab', class:('active' if @tab_type == 'tocome')}
-          = link_to "http://blog.naver.com/orpheus123" do
-            %li{id:'blog_tab'}
+        = link_to (image_tag "home.png", alt: "Kidspark Home"), "http://blog.naver.com/orpheus123", class: "logo"
+        .menu
+          = link_to image_tag("photo_#{ controller.controller_name == 'photos' ? 'on' : 'off' }.png", height: "27"), photos_index_path
+          = link_to image_tag("about_#{ controller.controller_name == 'about' ? 'on' : 'off' }.png"), about_index_path
+          = link_to image_tag("scatch_#{ controller.controller_name == 'scatch' ? 'on' : 'off' }.png"), scatch_index_path
+          = link_to image_tag("tocome_#{ controller.controller_name == 'tocome' ? 'on' : 'off' }.png"), tocome_index_path
+          = link_to image_tag("blog.png"), "http://blog.naver.com/orpheus123", id: "blog_tab"
+            
 
     #contents_wrapper 
       -if current_user
