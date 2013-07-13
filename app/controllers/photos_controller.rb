@@ -8,10 +8,13 @@ class PhotosController < ApplicationController
       format.html {
         @tab_type = "photos"
         if(params[:show_type] == "find")
-          @from_datetime = params[:datetimepicker1].to_time
-          @to_datetime = params["datetimepicker2"].to_time
-          @from_timestamp = @from_datetime.to_time.to_i
-          @to_timestamp = @to_datetime.to_time.to_i
+          # @from_datetime = params[:datetimepicker1].to_time
+          # @to_datetime = params["datetimepicker2"].to_time
+          # @from_timestamp = @from_datetime.to_time.to_i
+          # @to_timestamp = @to_datetime.to_time.to_i
+
+          @from_timestamp = Time.parse(params[:datatimepicker1]).utc
+          @to_timestamp = Time.parse(params[:datatimepicker2]).utc
 
           @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).desc(:created_at).page(params[:page]).per(9)
         else
@@ -31,10 +34,13 @@ class PhotosController < ApplicationController
       format.js {
 
         if(params[:show_type] == "find")
-          @from_datetime = params[:datetimepicker1].to_time
-          @to_datetime = params["datetimepicker2"].to_time
-          @from_timestamp = @from_datetime.to_time.to_i
-          @to_timestamp = @to_datetime.to_time.to_i
+          # @from_datetime = params[:datetimepicker1].to_time
+          # @to_datetime = params["datetimepicker2"].to_time
+          # @from_timestamp = @from_datetime.to_time.to_i
+          # @to_timestamp = @to_datetime.to_time.to_i
+
+          @from_timestamp = Time.parse(params[:datatimepicker1]).utc
+          @to_timestamp = Time.parse(params[:datatimepicker2]).utc
 
           @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).desc(:created_at).page(params[:page]).per(9)
         else
@@ -74,9 +80,11 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    @photos = Photo.find(params[:photo_ids])
-    @photos.each do |photo|
-      photo.destroy
+    unless params[:photo_ids].nil?
+      @photos = Photo.find(params[:photo_ids])
+      @photos.each do |photo|
+        photo.destroy
+      end
     end
     # @photo = Photo.where(id: params[:id]).first
     # @photo.delete

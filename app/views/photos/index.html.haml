@@ -13,13 +13,15 @@
         = hidden_field_tag 'show_type', 'find'
       #search_button_wrapper
         =image_submit_tag "find_photo.png", :class => "search_button"
-#photo_area
-  - if current_user
-    = form_tag photos_destroy_path do
-      %p= submit_tag "체크된 거 삭제!"
-      
+        
+- if current_user
+  = form_tag photos_destroy_path do
+    %p= submit_tag "체크된 거 삭제!"
+    #photo_area
       = render partial: "layouts/photo_box", locals: {photos: @photos}
-  - else
+      
+- else
+  #photo_area
     = render partial: "layouts/photo_box", locals: {photos: @photos}
 =paginate @photos
 
