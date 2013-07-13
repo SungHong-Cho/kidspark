@@ -1,9 +1,9 @@
 -photos.each do |photo|
-  =link_to(photos_detail_path(photo)) do
-    .box
-      .photo_box
-        =image_tag(photo.url_n)
-      .meta_box
-        =photo.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S')
-        -if current_user
-          = link_to "삭제", photos_destory_path(photo) 
+  .box
+    .photo_box
+      = link_to(photos_detail_path(photo)) do
+        = image_tag photo.url_n, width: 320, height: 262
+    .meta_box
+      =photo.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S')
+  -if current_user
+    = button_to "삭제", photos_destroy_path(photo), :method => :delete

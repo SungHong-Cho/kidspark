@@ -64,12 +64,12 @@ a:hover {
 #mobile_search_fields_wrapper{
   position:relative;
   top: -1vw;
-  display:inline-block;
+  display:inline-block;*display:inline;*zoom:1;
   width:50%;
 }
 
 #mobile_search_button_wrapper{
-  display:inline-block;
+  display:inline-block;*display:inline;*zoom:1;
   width:20%;
 }
 
