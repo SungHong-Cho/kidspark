@@ -1,21 +1,23 @@
-%span#info_area
-  =image_tag("info_mention.png")
-#search_area
-  %h3 우리 아이 사진 찾기
-  %p 방문하신 기간의 범위를 정해주세요.
-  %p 텍스트박스를 클릭하면 캘린더가 뜹니다.
-  =form_tag("/photos/index") do
-    #search_fields_wrapper
-      = text_field_tag "datetimepicker1", nil, class:"search_box", placeholder: "시작 날짜를 입력해보세요."
-      %b 부터  
-      = text_field_tag "datetimepicker2", nil, class:"search_box", placeholder: "종료 날짜를 입력해보세요"
-      %b 까지
-    = hidden_field_tag 'show_type', 'find'
-    #search_button_wrapper
-      =image_submit_tag "find_photo.png", :class => "search_button"
+#info_area
+  = image_tag("info_mention.png")
+  #search_area
+    /%h3 우리 아이 사진 찾기
+    /%p 방문하신 기간의 범위를 정해주세요.
+    /%p 텍스트박스를 클릭하면 캘린더가 뜹니다.
+    =form_tag("/photos/index") do
+      #search_fields_wrapper
+        = text_field_tag "datetimepicker1", nil, class:"search_box", placeholder: "시작 날짜를 입력해보세요."
+        %b 부터  
+        = text_field_tag "datetimepicker2", nil, class:"search_box", placeholder: "종료 날짜를 입력해보세요"
+        %b 까지
+        = hidden_field_tag 'show_type', 'find'
+      #search_button_wrapper
+        =image_submit_tag "find_photo.png", :class => "search_button"
 #photo_area
   - if current_user
     = form_tag photos_destroy_path do
+      %p= submit_tag "체크된 거 삭제!"
+      
       = render partial: "layouts/photo_box", locals: {photos: @photos}
   - else
     = render partial: "layouts/photo_box", locals: {photos: @photos}

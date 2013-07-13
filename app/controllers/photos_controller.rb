@@ -74,7 +74,7 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    @photos = Photo.find_by_id(params[:photo_ids])
+    @photos = Photo.find(params[:photo_ids])
     @photos.each do |photo|
       photo.destroy
     end

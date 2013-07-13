@@ -4,7 +4,10 @@
       = link_to(photos_detail_path(photo)) do
         = image_tag photo.url_n, width: 320, height: 262
     .meta_box
-      =photo.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S')
-  -if current_user
+      -if current_user
+        %input{ type: "checkbox", name: "photo_ids[]", value: photo.id }
+        = photo.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S')
     /= button_to "삭제", photos_destroy_path(photo), :method => :delete
-    = check_box_tag "delete_#{photo.id}", photo.id, name: "photo_ids[]"
+    
+
+  

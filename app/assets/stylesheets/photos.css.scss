@@ -34,24 +34,23 @@ a:hover {
   text-decoration:none;
 }
 
-#info_area{
+/*#info_area{
   display:inline-block;
   zoom:1;
   .display:inline;
-  
-}
+}*/
 
 #search_area{
         display:inline-block;
   zoom:1;
-  *display:inline;
+  .display:inline;
   float:right;
   border-radius:5px;
   text-align:center;
-  height:25px;
+  //height:25px;
   padding:7px 0px;
   vertical-align:middle;
-  line-height:27px;
+  line-height:30px;
   margin-right:20px;
 }
 
