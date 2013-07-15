@@ -13,8 +13,8 @@ class PhotosController < ApplicationController
           # @from_timestamp = @from_datetime.to_time.to_i
           # @to_timestamp = @to_datetime.to_time.to_i
 
-          @from_timestamp = Time.parse(params[:datatimepicker1]).utc
-          @to_timestamp = Time.parse(params[:datatimepicker2]).utc
+          @from_timestamp = Time.parse(params[:datetimepicker1]).utc
+          @to_timestamp = Time.parse(params[:datetimepicker2]).utc
 
           @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).desc(:created_at).page(params[:page]).per(9)
         else
@@ -39,8 +39,8 @@ class PhotosController < ApplicationController
           # @from_timestamp = @from_datetime.to_time.to_i
           # @to_timestamp = @to_datetime.to_time.to_i
 
-          @from_timestamp = Time.parse(params[:datatimepicker1]).utc
-          @to_timestamp = Time.parse(params[:datatimepicker2]).utc
+          @from_timestamp = Time.parse(params[:datetimepicker1]).utc
+          @to_timestamp = Time.parse(params[:datetimepicker2]).utc
 
           @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).desc(:created_at).page(params[:page]).per(9)
         else

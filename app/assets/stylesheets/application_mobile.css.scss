@@ -14,24 +14,40 @@
   width:100%;
   margin:0;
   border:0;
-  font-size:0;
+//  font-size:0;
 }
 
 #mobile_facility_tab{
   width:21.111111111%;
-  display:inline-block;*display:inline;*zoom:1;
+  //height:1.974999em;
+  //background: image-url("mobile_facility_tab.png") no-repeat center;
+  //background-size:100% 100%;
+  //display:inline-block;*display:inline;*zoom:1;
+  float:left;
 }
 #mobile_jumping_tab{
   width:28.888888889%;
-  display:inline-block;*display:inline;*zoom:1;
+  //height:1.974999em;
+  //background: image-url("mobile_jumping_tab.png") no-repeat center;
+  //background-size:100% 100%;
+  //display:inline-block;*display:inline;*zoom:1;
+  float:left;
 }
 #mobile_gallery_tab{
   width:25.972222222%;
-  display:inline-block;*display:inline;*zoom:1;
+  //height:1.974999em;
+  //background: image-url("mobile_gallery_tab.png") no-repeat center;
+  //background-size:100% 100%;
+  //display:inline-block;*display:inline;*zoom:1;
+  float:left;
 }
 #mobile_blog_tab{
   width:24.027777778%;
-  display:inline-block;*display:inline;*zoom:1;
+  //height:1.974999em;
+  //background: image-url("mobile_blog_tab.png") no-repeat center;
+  //background-size:100% 100%;
+  //display:inline-block;*display:inline;*zoom:1;
+  float:left;
 }
 
 #mobile_nav #mobile_facility_tab img{
@@ -52,7 +68,7 @@
 
 #mobile_contents{
   background:white;
-
+  clear:both;
   width:100%;
 }
 

@@ -42,6 +42,7 @@ a:hover {
   vertical-align:middle;
   line-height:27px;
   width:100%;
+  clear:both;
 }
 
 .mobile_search_box{
@@ -83,9 +84,10 @@ a:hover {
 
 .mobile_box{
   border:0;
-  display: inline-block;
+  //display: inline-block;
   width:25%;
   font-size:0;
+  float:left;
 }
 
 .mobile_box img{

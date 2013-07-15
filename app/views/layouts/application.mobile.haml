@@ -7,7 +7,7 @@
     = javascript_include_tag "datetimepicker"
     = javascript_include_tag "jquery-ui-timepicker-addon"
     = csrf_meta_tags
-    %meata{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
     /[if lt IE9]
       = javascript_include_tag "http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"
     
@@ -28,7 +28,6 @@
       #mobile_blog_tab
         = link_to "http://blog.naver.com/orpheus123" do
           = image_tag "mobile_blog_tab.png", alt: "블로그"
-
     #mobile_contents
       =yield
     #mobile_footer

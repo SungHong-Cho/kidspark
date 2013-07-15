@@ -3,8 +3,8 @@ Kidspark::Application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destory', as: 'logout'
 
-  get "mobile_jumping/index"
-
+  match 'mobile_jumping/index' => 'mobile_jumping#index', as:'mobile_jumping_index'
+ 
   match 'mobile_jumping/detail/:id'=>'mobile_jumping#detail', as:'mobile_jumping_detail'
 
   get "mobile_gallery/index"
