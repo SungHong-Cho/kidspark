@@ -1,32 +1,35 @@
 $(function(){
-    //setInterval(update_latest_photos, 2000);
+    setInterval(update_latest_photos, 3000);
 });
 
 function update_latest_photos(){
 //    var request_time = Math.round(new Date().getTime() / 1000);
-      var request_time = parseInt($("#last_update_time").val()) + 2;
+      var request_time = parseInt($("#last_update_time").val());
 
     $.ajax({
         type: 'get',
         url: '/photos/index',
         dataType: "json",
-        data: { last_update_time : $("#last_update_time").val() } ,
+        data: { last_update_time : request_time } ,
         success: function(data) {
-            //console.log(data);
-            $("#last_update_time").val(request_time);
+            console.log(data);
+            $("#last_update_time").val( data["time_is"] );
 
-            $.each(data, function(index, value){
-                var dateTime = value.created_at.replace(/[T]/, " ").replace(/[Z]/, "");
+            $.each(data["photos"], function(index, value){
+                var dateTime = new Date(value.created_at).format("yyyy-MM-dd hh:mm:ss");
 
-    var dateTime = new Date(value.created_at).format("yyyy-MM-dd hh:mm:ss")
-                $("#photo_area").prepend("<a href='/photos/detail/" + value.id + "'>" +
-                                        "<div class='box'>" +
-                                        "<div class='photo_box'>" +
-                                        "<img src='" + url_n(value) + "'/>" +
-                                        "</div>" +
-                                        "<div class='meta_box'>" + dateTime + "</div>" +
-                                        "</div>" +
-                                        "</a>");
+                var photo_box =
+                    "<div class='box'>" +
+                    "<div class='photo_box'>" +
+                    "<a href='/photos/detail/" + value.id + "'>" +
+                    "<img src='" + url_n(value) + "' alt='" + dateTime + "'/>" +
+                    "</a></div>" + "<div class='meta_box'>";
+
+                if( !!data["admin"] )
+                    photo_box += "<input type='checkbox' name='photo_ids[]' value='" + value.id + "'></input>";
+
+                photo_box += dateTime + "</div>" + "</div>";
+                $("#photo_area").prepend(photo_box);
             });
             /*
             var new_photo = $("#photo_area a:first-child").clone();

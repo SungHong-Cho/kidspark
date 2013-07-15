@@ -15,6 +15,8 @@
   margin:0;
   border:0;
   font-size:0;
+  letter-spacing: 0;
+  word-spacing: 0;
 }
 
 #mobile_facility_tab{
@@ -34,21 +36,21 @@
   display:inline-block;*display:inline;*zoom:1;
 }
 
-#mobile_nav #mobile_facility_tab img{
-  width:100%;
-}
+/* #mobile_nav #mobile_facility_tab img{ */
+/*    width:100%; */
+/* } */
 
-#mobile_nav #mobile_jumping_tab img{
-  width:100%;
-}
+/* #mobile_nav #mobile_jumping_tab img{ */
+/*    width:100%; */
+/*  } */
 
-#mobile_nav #mobile_gallery_tab img{
-  width:100%;
-}
+/* #mobile_nav #mobile_gallery_tab img{ */
+/*    width:100%; */
+/*  } */
 
-#mobile_nav #mobile_blog_tab img{
-  width:100%;
-}
+/* #mobile_nav #mobile_blog_tab img{ */
+/*    width:100%; */
+/* } */
 
 #mobile_contents{
   background:white;

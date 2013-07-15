@@ -27,8 +27,11 @@ class PhotosController < ApplicationController
       }
 
       format.json {
-        @photos = Photo.where(:created_at.gt => Time.at(params[:last_update_time].to_i))
-        render js: @photos.to_json
+        response = {}
+        response["time_is"] = Time.now.to_i
+        response["admin"] = (not current_user.nil?)
+        response["photos"] = Photo.where(:created_at.gt => Time.at(params[:last_update_time].to_i))
+        render js: response.to_json
       }
 
       format.js {
@@ -97,5 +100,9 @@ class PhotosController < ApplicationController
       p.delete
     end
     redirect_to root_url
+  end
+
+  def servertime
+
   end
 end
