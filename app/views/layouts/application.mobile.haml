@@ -7,7 +7,7 @@
     = javascript_include_tag "datetimepicker"
     = javascript_include_tag "jquery-ui-timepicker-addon"
     = csrf_meta_tags
-    %meata{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0'}
     /[if lt IE9]
       = javascript_include_tag "http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"
     
@@ -16,19 +16,18 @@
       .logo
         = image_tag "mobile_header.png", alt: "Kidspark 양재 @ AT센터 7월 5일 ~ 8월 25일, 연락처 1588-7890"
     #mobile_nav
-      /#mobile_facility_tab
-      /= link_to mobile_facilities_index_path do
-      = image_tag "mobile_facility_tab.png", alt: "시설정보"
-      /#mobile_jumping_tab
-      /= link_to mobile_jumping_index_path do
-      = image_tag "mobile_jumping_tab.png", alt: "점핑샷"
-      /#mobile_gallery_tab
-      /= link_to mobile_gallery_index_path do
-      = image_tag "mobile_gallery_tab.png", alt: "갤러리"
-      /#mobile_blog_tab
-      /= link_to "http://blog.naver.com/orpheus123" do
-      = image_tag "mobile_blog_tab.png", alt: "블로그"
-
+      #mobile_facility_tab
+        = link_to mobile_facilities_index_path do
+          = image_tag "mobile_facility_tab.png", alt: "시설정보"
+      #mobile_jumping_tab
+        = link_to mobile_jumping_index_path do
+          = image_tag "mobile_jumping_tab.png", alt: "점핑샷"
+      #mobile_gallery_tab
+        = link_to mobile_gallery_index_path do
+          = image_tag "mobile_gallery_tab.png", alt: "갤러리"
+      #mobile_blog_tab
+        = link_to "http://blog.naver.com/orpheus123" do
+          = image_tag "mobile_blog_tab.png", alt: "블로그"
     #mobile_contents
       =yield
     #mobile_footer

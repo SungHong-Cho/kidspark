@@ -47,6 +47,7 @@ $(function() {
     minuteGrid: 10,
     hourMin: 10,
     hourMax: 20,
+    hour: 20,
     minDate: new Date(2013, 6, 5, 10, 00),
     maxDate: new Date(2013, 7, 25, 20, 00)
   });
