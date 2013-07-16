@@ -14,6 +14,8 @@ function update_latest_photos(){
         success: function(data) {
             console.log(data);
             $("#last_update_time").val( data["time_is"] );
+            var next_photo_count = parseInt($("#photo_count").text().replace(/,/g, '')) + data["photos"].length;
+            $("#photo_count").text(next_photo_count);
 
             $.each(data["photos"], function(index, value){
                 var dateTime = new Date(value.created_at).format("yyyy-MM-dd hh:mm:ss");
@@ -26,7 +28,7 @@ function update_latest_photos(){
                     "</a></div>" + "<div class='meta_box'>";
 
                 if( !!data["admin"] )
-                    photo_box += "<input type='checkbox' name='photo_ids[]' value='" + value.id + "'></input>";
+                    photo_box += "<input type='checkbox' name='photo_ids[]' value='" + value._id + "'></input>";
 
                 photo_box += dateTime + "</div>" + "</div>";
                 $("#photo_area").prepend(photo_box);

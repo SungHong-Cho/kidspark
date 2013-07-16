@@ -7,6 +7,8 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.html {
         @tab_type = "photos"
+        @photo_count = Photo.all.count
+
         if(params[:show_type] == "find")
           # @from_datetime = params[:datetimepicker1].to_time
           # @to_datetime = params["datetimepicker2"].to_time
@@ -16,7 +18,7 @@ class PhotosController < ApplicationController
           @from_timestamp = Time.parse(params[:datetimepicker1]).utc
           @to_timestamp = Time.parse(params[:datetimepicker2]).utc
 
-          @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).desc(:created_at).page(params[:page]).per(9)
+          @photos = Photo.where(:created_at => @from_timestamp...@to_timestamp).desc(:created_at).page(params[:page]).per(9)
         else
           @photos = Photo.all.desc(:created_at).page(params[:page]).per(9)
         end
