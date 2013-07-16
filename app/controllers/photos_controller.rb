@@ -93,7 +93,7 @@ class PhotosController < ApplicationController
     end
     # @photo = Photo.where(id: params[:id]).first
     # @photo.delete
-    redirect_to root_url
+    redirect_to photos_index_path
   end
 
   def destroy_all

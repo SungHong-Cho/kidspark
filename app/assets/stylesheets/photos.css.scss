@@ -141,11 +141,17 @@ a:hover {
   border: 0px;
 }
 
-.detail_datetime_box{
-  width:$photo_big_width;
-  overflow:auto;  
-  text-align:right;
-  font-size:2em;
+.detail_datetime_box{ 
+/*   width:$photo_big_width; */
+/*   overflow:auto;   */
+    text-align: center;
+    padding: 2em 0;
+    line-height: 2.5em;
+/*   font-size:2em; */
+}
+
+.detail_datetime_box .datetime {
+    font-size: 1.5em;
 }
 
 .detail_photo_box{

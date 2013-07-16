@@ -15,7 +15,7 @@
         =image_submit_tag "find_photo.png", :class => "search_button"
       %p
         현재까지 누적된 총 사진 수는
-        %b#photo_count= @photo_count
+        %b#photo_count= number_with_delimiter(@photo_count)
         장 입니다.
         
 - if current_user

@@ -2,9 +2,11 @@
   .detail_photo_box
     =image_tag(@photo.url_b)
   .detail_datetime_box
-    =@photo.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S')
-    -if current_user
-      = link_to "삭제", photos_destroy_path(@photo)
+    %p
+      %b.datetime= "촬영시각 : #{@photo.created_at.localtime.strftime('%Y-%m-%d %H:%M:%S')}"
+    %p
+      ※ 사이트에 사진 노출을 원하지 않는 고객은 연락 바랍니다.
+      %b 키즈파크 점핑샷 서비스 담당자 : 조영삼 / 02-2023-1356
 
   .detail_share_box
     .facebook
