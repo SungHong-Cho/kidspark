@@ -18,7 +18,7 @@ class PhotosController < ApplicationController
           @from_timestamp = Time.parse(params[:datetimepicker1]).utc
           @to_timestamp = Time.parse(params[:datetimepicker2]).utc
 
-          @photos = Photo.where(:created_at => @from_timestamp...@to_timestamp).desc(:created_at).page(params[:page]).per(18)
+          @photos = Photo.where(:created_at => @from_timestamp..@to_timestamp).desc(:created_at).page(params[:page]).per(18)
         else
           @photos = Photo.all.desc(:created_at).page(params[:page]).per(18)
         end
