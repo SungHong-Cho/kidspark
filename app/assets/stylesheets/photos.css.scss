@@ -35,7 +35,7 @@ a:hover {
 }
 
 #info_area{
-    line-height: 70px;
+    line-height: 80px;
 }
 
 #search_area{
@@ -161,10 +161,27 @@ a:hover {
   text-align:right;
 }
 
-.detail_share_box img{
-  width: 200px;
+/* .detail_share_box img{ */
+/*   width: 200px; */
+/* } */
+
+#facebook-share, #twitter-share, #download-photo {
+display: inline-block;
+zoom: 1;
+.display: inline;
+width: 200px;
+height: 70px;
 }
 
-.facebook, .twitter, .download {
-display: inline;
+#facebook-share {
+    background: image-url("facebook-share.jpg") no-repeat center center;
 }
+
+#twitter-share {
+    background: image-url("twitter-share.jpg") no-repeat center center;
+}
+
+#download-photo {
+    background: image-url("download-photo.jpg") no-repeat center center;
+}
+

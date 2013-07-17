@@ -9,12 +9,8 @@
       %b 키즈파크 점핑샷 서비스 담당자 : 조영삼 / 02-2023-1356
 
   .detail_share_box
-    .facebook
-      %p "시원하고 신나는 에어바운스와 에어슬라이드, 30m 점프존 등이 있는 양재 키즈파크에서 점프샷 한장!!"
-      = link_to image_tag("facebook-big.jpg"), 'http://www.facebook.com/sharer.php?u=jumpingshot.kidspark.kr/photos/detail/'+@photo.id, :target => :blank
-    .twitter
-      %a{"data-count" => "none", "data-lang" => "ko", "data-size" => "large", "data-text" => "양재 키즈파크에서 점프샷!!!" ,"data-via" => "양재KidsPark", :href => "http://twitter.com/share"}
-        = image_tag("twitter-big.jpg")
-      %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
-    .download
-      = link_to image_tag("download-big.jpg"), photos_download_path(@photo) 
+    %p "시원하고 신나는 에어바운스와 에어슬라이드, 30m 점프존 등이 있는 양재 키즈파크에서 점프샷 한장!!"
+    = link_to "", 'http://www.facebook.com/sharer.php?u=jumpingshot.kidspark.kr/photos/detail/'+@photo.id, :target => :blank, id: "facebook-share"
+    %a{"data-count" => "none", "data-lang" => "ko", "data-size" => "large", "data-text" => "양재 키즈파크에서 점프샷!!!" ,"data-via" => "양재KidsPark", :href => "http://twitter.com/share", id: "twitter-share"}
+    %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
+    = link_to "", photos_download_path(@photo), id: "download-photo"
