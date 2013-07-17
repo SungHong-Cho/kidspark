@@ -1,3 +1,8 @@
+- content_for :meta_head do
+  %meta{ name: "title", content: "양재 키즈파크 점핑샷!! 양제AT센터에서 7월 5일부터 8월 25일까지!" }
+  %meta{ name: "description", content: "시원하고 신나는 에어바운스와 에어슬라이드, 30m 점프존 등이 있는 양재 키즈파크에서 점프샷 한 장!!" }
+  %link{ rel: "image_src", href: @photo.url_s }
+
 .detail_wrapper
   .detail_photo_box
     =image_tag(@photo.url_b)
@@ -9,8 +14,9 @@
       %b 키즈파크 점핑샷 서비스 담당자 : 조영삼 / 02-2023-1356
 
   .detail_share_box
-    %p "시원하고 신나는 에어바운스와 에어슬라이드, 30m 점프존 등이 있는 양재 키즈파크에서 점프샷 한장!!"
-    = link_to "", 'http://www.facebook.com/sharer.php?u=jumpingshot.kidspark.kr/photos/detail/'+@photo.id, :target => :blank, id: "facebook-share"
+    /%p "시원하고 신나는 에어바운스와 에어슬라이드, 30m 점프존 등이 있는 양재 키즈파크에서 점프샷 한장!!"
+    = link_to image_tag("facebook-share.jpg"), 'http://www.facebook.com/sharer.php?u=jumpingshot.kidspark.kr/photos/detail/'+@photo.id, :target => :blank, id: "facebook-share"
     %a{"data-count" => "none", "data-lang" => "ko", "data-size" => "large", "data-text" => "양재 키즈파크에서 점프샷!!!" ,"data-via" => "양재KidsPark", :href => "http://twitter.com/share", id: "twitter-share"}
+      = image_tag("twitter-share.jpg")
     %script{:src => "http://platform.twitter.com/widgets.js", :type => "text/javascript"}
-    = link_to "", photos_download_path(@photo), id: "download-photo"
+    = link_to image_tag("download-photo.jpg"), photos_download_path(@photo), id: "download-photo"
