@@ -1,3 +1,19 @@
 // Place all the styles related to the scatch controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#scatch_wrapp{
+  width:100%;
+  text-align:center;
+
+
+  .oneline{
+    margin:3px 0 15px;
+    font-size: 1.3em;
+  }
+
+  img{
+    margin-top:15px;
+  }
+}
+
+
