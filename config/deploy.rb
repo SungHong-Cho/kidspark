@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 
-server "54.250.162.126", :web, :app, :db
+server "54.250.222.28", :web, :app, :db
 
 set :application, "kidspark"
 set :user, "ubuntu"
